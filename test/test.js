@@ -18,7 +18,7 @@
 /* jshint -W014 */
 /* jshint -W010 */
 /* jshint -W115 */
-/* global require, describe, it, beforeEach */
+/* global require, process, describe, it, beforeEach */
 
 
 /**

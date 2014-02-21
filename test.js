@@ -18,7 +18,7 @@
 /* jshint -W053 */
 /* jshint -W014 */
 /* jshint -W010 */
-/* global require, console */
+/* global require, process, console */
 
 
 /**
