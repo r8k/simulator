@@ -1,46 +1,25 @@
-simulator
-=========
-1. Simulator accepts User Profiles
-  * Profiles can contain:
-    * Rate per kWh
-    * Average Consumption of the Person, per Day
-    * Hourly Consumption Weight, over 24 Hours
 
-2. Simulator will populate Consumption Data using
-  * a Random Date
-  * Hourly Consumption Weight, from the profile
-  * Average Consumption of the Person, per Day
+/**
+ * author : Rajiv Kilaparti
+ * email  : kilapartirajiv@gmail.com
+ *
+ * description :
+ * this module is used for testing
+ * the simulator module ..
+ */
 
-3. Simulator will also calculate the Current Price
-  * using the Consumption data, that is populated above
-  * using the Rate per kWh, from the profile
 
-4. Simulator will generate data for
-  * different Streams:
-    * CurrentSummationDelivered
-    * CurrentSummationReceived
-    * InstantaneousDemand
-  
-  * different descriptions
-    * Real-Time Demand
-    * Billing Stream
-  
-  * different meters
-    * SEP/1.x, teds
-    * Electricity, Gas
-  
-  * different connection status
-    * 0, 1
-  
-  * different signal strength
+/**
+ * JsHint Options
+ */
 
-## How to Test
-    $ // with mocha installed ( npm install -g mocha )
-    $ userid=6e6aaa75-xxxx-xxxx-xxxx-xxxxxxxxx mocha // your userid here
+/* jshint strict: true */
+/* jshint laxcomma: true */
+/* jshint -W053 */
+/* jshint -W014 */
+/* jshint -W010 */
+/* global require, console */
 
-## Using it, programmatically
-```js
-// File: test.js
 
 /**
  * `Module` Dependencies
@@ -82,8 +61,6 @@ var cparse = function (cookie, key, seperator) {
  * @type {Simulator}
  */
 var simulator = new Simulator({
-// pass the userid from command-line:
-// userid=6e6aaa75-xxxx-xxxx-xxxx-xxxxxxxxx node test.js
   user: process.env.userid,
   profile: {
     summ: 200,
@@ -115,4 +92,3 @@ simulator.upload(function(err, res, body, input) {
     console.log(ERRR + util.format('Error: %s', body));
   }
 });
-```
